@@ -29,7 +29,8 @@ body {
 }
 
 .display {
-    text-align: right; 
+    display: flex;
+    justify-content: flex-end; 
     width: 220px;
     padding: 5px;
     border-radius: 7px;
