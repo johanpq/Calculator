@@ -1,0 +1,74 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0.37), rgba(0, 0, 255, 0.411));
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%; 
+}
+
+.calc-container {
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 1px 0px black;
+    border-radius: 7px;
+    background-color: azure;
+    padding: 10px;
+}
+
+.display {
+    text-align: right; 
+    width: 220px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: rgba(119, 219, 219, 0.527);
+    margin-bottom: 5px;
+}
+
+.teclas {
+    width: 220px;
+    font-weight: 800; 
+}
+
+.tecla {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px rgb(18, 30, 197);
+
+    &:hover {
+        background-color: rgba(165, 136, 219, 0.534);
+    }
+}
+
+.op {
+    background-color: rgb(255, 84, 84);
+
+    &:hover {
+        background-color: rgba(255, 84, 84, 0.842);
+    }
+}
+
+.op2 {
+    background-color: rgba(186, 118, 250, 0.5);
+
+    &:hover {
+        background-color: rgba(186, 118, 250, 0.644);
+    }
+}
+
