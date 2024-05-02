@@ -17,13 +17,19 @@ const teclas = [...document.querySelectorAll('.tecla')];
 
 console.log(calculater);
 
+clean.addEventListener('click', () => display.innerHTML = "0");
+
 const print = document.addEventListener('click', (event) => {
     const p = document.createElement('p');
 
-    if(event.target.classList.contains('tecla')) {
-        p.innerHTML = event.target.textContent;
-
-        display.appendChild(p);
+    if(event.target.classList.contains('op2')) {
+        event.target = "";
+    } else {
+        if(event.target.classList.contains('tecla')) {
+            p.innerHTML = event.target.textContent;
+    
+            display.appendChild(p);
+        }
     }
 })
 
