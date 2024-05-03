@@ -18,6 +18,8 @@ const teclas = [...document.querySelectorAll('.tecla')];
 console.log(calculater);
 
 let zero = false;
+let isOp = false;
+let isComma = false;
 
 clean.addEventListener('click', () => {
     display.innerHTML = "0";
@@ -29,20 +31,21 @@ const print = document.addEventListener('click', (event) => {
 
     if(event.target.classList.contains('op2')) {
         event.target = "";
-    } else {
-        if(event.target.classList.contains('tecla')) {
-            
+    } else if(event.target.classList.contains('tecla')) {
             if(zero == false) {
                 zero = true
                 display.innerHTML = "";
             }
-
-            p.innerHTML= event.target.textContent;
+            
+            if(event.target.classList.contains('op') && isOp == false) {
+                isOp = true;
+                p.innerHTML= event.target.textContent;
+            } else if(!event.target.classList.contains('op')) {
+                isOp = false;
+                p.innerHTML= event.target.textContent;
+            }
     
             display.appendChild(p);
         }
     }
-})
-
-
-
+)
