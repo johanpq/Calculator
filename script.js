@@ -23,10 +23,14 @@ let isComma = false;
 
 let countTeclas = 0;
 
+let opOff = false;
+
 clean.addEventListener('click', () => {
     display.innerHTML = "0";
     zero = false;
     countTeclas = 0;
+    isComma = false;
+    opOff = false;
 } );
 
 const print = document.addEventListener('click', (event) => {
@@ -46,11 +50,19 @@ const print = document.addEventListener('click', (event) => {
         if(event.target.classList.contains('op') && isOp == false) {
             if(countTeclas > 0) {
                 isOp = true;
+                opOff = true;
                 p.innerHTML = event.target.textContent;
             }
 
         } else if(!event.target.classList.contains('op')) {
             isOp = false;
+        }
+
+        if(event.target.classList.contains('comma') && isComma == false) {
+            if(countTeclas > 0 && opOff == false) {
+                isComma = true;
+                p.innerHTML = event.target.textContent;
+            }
         }
 
         console.log(countTeclas);
