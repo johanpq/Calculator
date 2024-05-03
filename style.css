@@ -43,7 +43,7 @@ body {
     font-weight: 800; 
 }
 
-.tecla {
+.number, .p {
     height: 50px;
     width: 50px;
     cursor: pointer;
@@ -57,7 +57,14 @@ body {
     }
 }
 
-.op {
+.op, .comma {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px rgb(18, 30, 197);
     background-color: rgb(255, 84, 84);
 
     &:hover {
@@ -66,6 +73,13 @@ body {
 }
 
 .op2 {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    box-shadow: 0px 0px 1px 0px rgb(18, 30, 197);
     background-color: rgba(186, 118, 250, 0.5);
 
     &:hover {
