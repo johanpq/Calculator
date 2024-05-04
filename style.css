@@ -43,7 +43,7 @@ body {
     font-weight: 800; 
 }
 
-.number, .p {
+.number, .p1, .p2 { 
     height: 50px;
     width: 50px;
     cursor: pointer;
