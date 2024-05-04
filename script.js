@@ -85,7 +85,7 @@ const print = document.addEventListener('click', (event) => {
 
 const printResultado = resultado.addEventListener('click', () => {
     let calculo;
-    
+
     if(display.innerHTML.includes('x')) {
         calculo = eval(display.innerHTML.replace('x', '*'));
 
@@ -96,3 +96,41 @@ const printResultado = resultado.addEventListener('click', () => {
         display.innerHTML = calculo;
     }
 }) 
+
+// Função para lidar com eventos de teclado
+function handleKeyPress(event) {
+    const teclaPressionada = event.key;
+
+    if(zero == false) {
+        zero = true;
+        display.innerHTML = "";
+    }
+
+
+    if (!isNaN(teclaPressionada)) {
+        display.innerHTML += teclaPressionada;
+    }
+
+    else if (['+', '-', '*', '/', '(', ')'].includes(teclaPressionada)) {
+        display.innerHTML += teclaPressionada;
+    }
+
+    else if (teclaPressionada === 'Enter' || teclaPressionada === '=') {
+        const calculo = display.innerHTML;
+        const resultado = eval(calculo);
+        display.innerHTML = resultado;
+    }
+
+    else if (teclaPressionada === 'c' || teclaPressionada === 'C') {
+        display.innerHTML = '0';
+    }
+
+    else if (teclaPressionada === 'Backspace') {
+        display.innerHTML = display.innerHTML.slice(0, -1);
+    }
+
+    // Atualiza o display com o estado atual da calculadora
+    display.innerHTML = calculadora.expressao || '0';
+}
+
+document.addEventListener('keydown', handleKeyPress);
