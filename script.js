@@ -15,6 +15,8 @@ const op = document.querySelectorAll('.op');
 
 const teclas = [...document.querySelectorAll('.tecla')];
 
+const resultado = document.getElementById('res');
+
 console.log(calculater);
 
 let zero = false;
@@ -46,7 +48,7 @@ const print = document.addEventListener('click', (event) => {
 
         if(event.target.classList.contains('number')) {
             countTeclas++
-            p.innerHTML = event.target.textContent;
+            display.innerHTML+= event.target.textContent;
         }
 
         if(event.target.classList.contains('op') && isOp == false) {
@@ -55,7 +57,7 @@ const print = document.addEventListener('click', (event) => {
                 isComma = false;
                 isOp = true;
                 opOff = false;
-                p.innerHTML = event.target.textContent;
+                display.innerHTML+= event.target.textContent;
             }
 
         } else if(!event.target.classList.contains('op')) {
@@ -65,20 +67,32 @@ const print = document.addEventListener('click', (event) => {
         if(event.target.classList.contains('comma') && isComma == false) {
             if(countTeclas > 0 && opOff == false) {
                 isComma = true;
-                p.innerHTML = event.target.textContent;
+                display.innerHTML = event.target.textContent;
             }
         }
 
         if(event.target.classList.contains('p1')) {
-            p.innerHTML = event.target.textContent;
+            display.innerHTML+= event.target.textContent;
 
         } else if(event.target.classList.contains('p2')) {
-            p.innerHTML = event.target.textContent;
+            display.innerHTML+= event.target.textContent;
         }
 
         console.log(countTeclas);
         
     } 
-
-    display.appendChild(p);
  })
+
+const printResultado = resultado.addEventListener('click', () => {
+    let calculo;
+    
+    if(display.innerHTML.includes('x')) {
+        calculo = eval(display.innerHTML.replace('x', '*'));
+
+        display.innerHTML = calculo;
+    } else {
+        calculo = eval(display.innerHTML);
+
+        display.innerHTML = calculo;
+    }
+}) 
