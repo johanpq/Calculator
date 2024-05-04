@@ -20,10 +20,12 @@ console.log(calculater);
 let zero = false;
 let isOp = false;
 let isComma = false;
+let opOff = false;
+let pr = false;
 
 let countTeclas = 0;
 
-let opOff = false;
+
 
 clean.addEventListener('click', () => {
     display.innerHTML = "0";
@@ -49,8 +51,10 @@ const print = document.addEventListener('click', (event) => {
 
         if(event.target.classList.contains('op') && isOp == false) {
             if(countTeclas > 0) {
+                countTeclas = 0;
+                isComma = false;
                 isOp = true;
-                opOff = true;
+                opOff = false;
                 p.innerHTML = event.target.textContent;
             }
 
@@ -63,6 +67,13 @@ const print = document.addEventListener('click', (event) => {
                 isComma = true;
                 p.innerHTML = event.target.textContent;
             }
+        }
+
+        if(event.target.classList.contains('p1')) {
+            p.innerHTML = event.target.textContent;
+
+        } else if(event.target.classList.contains('p2')) {
+            p.innerHTML = event.target.textContent;
         }
 
         console.log(countTeclas);
