@@ -32,7 +32,7 @@ This project is hosted on GitHub Pages. Click [here](https://johanpq.github.io/C
 
 ## Author
 
-This project was developed by [Johan Queiroz].
+This project was developed by Johan Queiroz.
 
 ## Contribution
 
