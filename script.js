@@ -106,12 +106,18 @@ function handleKeyPress(event) {
         display.innerHTML = "";
     }
 
-
     if (!isNaN(teclaPressionada)) {
         display.innerHTML += teclaPressionada;
     }
 
-    else if (['+', '-', '*', '/', '(', ')'].includes(teclaPressionada)) {
+    else if (['+', '-', '*', 'x', '/', '(', ')'].includes(teclaPressionada)) {
+        let calculo;
+
+        if(display.innerHTML.includes('x')) {
+            calculo = eval(display.innerHTML.replace('x', '*'));
+    
+            display.innerHTML = calculo;
+        }
         display.innerHTML += teclaPressionada;
     }
 
@@ -134,3 +140,9 @@ function handleKeyPress(event) {
 }
 
 document.addEventListener('keydown', handleKeyPress);
+
+copy.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.innerHTML);
+})
+
+
