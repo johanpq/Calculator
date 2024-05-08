@@ -25,9 +25,14 @@ This is a simple calculator developed using HTML, CSS, and JavaScript. It allows
 - CSS3
 - JavaScript
 
+## GitHub Pages
+
+This project is hosted on GitHub Pages. Click [here](https://johanpq.github.io/Calculator/) to view it.
+
+
 ## Author
 
-This project was developed by [Johan Queiroz].
+This project was developed by Johan Queiroz.
 
 ## Contribution
 
